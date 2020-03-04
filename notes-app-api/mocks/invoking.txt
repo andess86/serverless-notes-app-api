@@ -1,4 +1,3 @@
-
 To test functions locally. Run these from project root folder:
 
 serverless invoke local --function create --path mocks/create-event.json
@@ -7,6 +6,7 @@ serverless invoke local --function list --path mocks/list-event.json
 serverless invoke local --function update --path mocks/update-event.json
 serverless invoke local --function delete --path mocks/delete-event.json
 serverless invoke local --function billing --path mocks/billing-event.json
+
 
 
 Testing all AWS infrastructure setup:
@@ -23,3 +23,9 @@ npx aws-api-gateway-cli-test \
 --path-template='/notes' \
 --method='POST' \
 --body='{"content":"hello world","attachment":"hello.jpg"}'
+
+
+
+Tailing aws lambda function log like so:
+
+serverless logs -f create --tail
